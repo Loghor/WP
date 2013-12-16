@@ -27,7 +27,7 @@
         </StackPanel>
 
         <TextBlock FontSize="22" Name="textBlockAverageEvaluation" HorizontalAlignment="Left" Margin="10,38,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Średnia ocen:" VerticalAlignment="Top" RenderTransformOrigin="0.512,-0.519"/>
-        <TextBlock FontSize="22" Name="textBlockValueAverageEvaluation" HorizontalAlignment="Left" Margin="159,28,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBlock FontSize="22" Name="textBlockValueAverageEvaluation" HorizontalAlignment="Left" Margin="159,38,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         <Grid HorizontalAlignment="Left" Height="552" Margin="0,72,0,0" Grid.Row="1" VerticalAlignment="Top" Width="480">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0*"/>
