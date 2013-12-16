@@ -26,38 +26,38 @@
             <TextBlock Text="Patronage 2014" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
         </StackPanel>
 
-        <TextBlock Name="textBoxAverageEvaluation" HorizontalAlignment="Left" Margin="12,40,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Średnia ocen:" VerticalAlignment="Top" RenderTransformOrigin="0.512,-0.519"/>
-        <TextBlock Name="textBoxValueAverageEvaluation" HorizontalAlignment="Left" Margin="155,40,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBlock FontSize="22" Name="textBlockAverageEvaluation" HorizontalAlignment="Left" Margin="10,38,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Średnia ocen:" VerticalAlignment="Top" RenderTransformOrigin="0.512,-0.519"/>
+        <TextBlock FontSize="22" Name="textBlockValueAverageEvaluation" HorizontalAlignment="Left" Margin="159,28,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         <Grid HorizontalAlignment="Left" Height="552" Margin="0,72,0,0" Grid.Row="1" VerticalAlignment="Top" Width="480">
-            <ListBox Name="listBoxEvalution" Margin="0,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <ListBox Name="listBoxEvalution" Margin="10,0" Grid.Column="1">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Button Width="480" Height="120">
-                            <Button.Content>
-                                <StackPanel Orientation="Horizontal" Height="120" Width="400">
-                                    <StackPanel Orientation="Vertical" Height="120">
-                                        <StackPanel Orientation="Horizontal" Height="40">
-                                            <TextBlock Width="100" FontSize="22" Text="Imię" Height="40"/>
-                                            <TextBlock Width="200" FontSize="22" Text="{Binding}" Height="40"/>
-                                        </StackPanel>
-                                        <StackPanel Orientation="Horizontal" Height="40">
-                                            <TextBlock Width="100" FontSize="22" Text="Nazwisko" Height="40"/>
-                                            <TextBlock Width="200" FontSize="22" Text="{Binding}" Height="40"/> 
-                                        </StackPanel>
-                                        <StackPanel Orientation="Horizontal" Height="40">
-                                            <TextBlock Width="100" FontSize="22" Text="Ocena" Height="40"/>
-                                            <TextBlock Width="200" FontSize="22" Text="{Binding}" Height="40"/>
-                                        </StackPanel>
-                                    </StackPanel>
+                        <StackPanel Orientation="Horizontal" Height="120" Width="400">
+                            <StackPanel Orientation="Vertical" Height="120">
+                                <StackPanel Orientation="Horizontal" Height="40">
+                                    <TextBlock Width="150" FontSize="22" Text="Imię:" Height="40"/>
+                                    <TextBlock Width="200" FontSize="22" Text="{Binding Name}" Height="40"/>
                                 </StackPanel>
-                            </Button.Content>
-                        </Button>
+                                <StackPanel Orientation="Horizontal" Height="40">
+                                    <TextBlock Width="150" FontSize="22" Text="Nazwisko:" Height="40"/>
+                                    <TextBlock Width="200" FontSize="22" Text="{Binding Surname}" Height="40"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Height="40">
+                                    <TextBlock Width="150" FontSize="22" Text="Ocena:" Height="40"/>
+                                    <TextBlock Width="200" FontSize="22" Text="{Binding Evaluation}" Height="40"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
 
         </Grid>
-    <!--ContentPanel - place additional content here-->
+        <!--ContentPanel - place additional content here-->
 
     </Grid>
     <!-- Dodanie AppBar z przyciskiem "add" oraz wywołanie funkcji "NextPage" przy kliknięciu -->

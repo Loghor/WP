@@ -28,20 +28,20 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="72" Margin="-4,49,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="456"/>
+            <TextBox TextChanged="textBoxName_TextChanged" x:Name="textBoxName" HorizontalAlignment="Left" Height="72" Margin="-4,49,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="456"/>
             <TextBlock x:Name="textBlockName" HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" Text="Imię" VerticalAlignment="Top"/>
-            <TextBox x:Name="textBoxSurname" HorizontalAlignment="Left" Height="72" Margin="-4,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="456"/>
+            <TextBox TextChanged="textBoxSurname_TextChanged" x:Name="textBoxSurname" HorizontalAlignment="Left" Height="72" Margin="-4,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="456"/>
             <TextBlock x:Name="textBlockSurname" HorizontalAlignment="Left" Margin="10,126,0,0" TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top"/>
             <toolkit:ListPicker FullModeHeader="Ocena" Margin="10,262,14,10" ItemsSource="{Binding Path=EvaluationItems}" FullModeItemTemplate="{Binding Path=EvaluationItems, Mode=TwoWay}" ItemTemplate="{Binding Path=EvaluationItems, Mode=TwoWay}" x:Name="lpkEvaluation"/>
             <TextBlock x:Name="textBlockEvaluation" HorizontalAlignment="Left" Margin="10,230,0,0" TextWrapping="Wrap" Text="Ocena" VerticalAlignment="Top"/>
         </Grid>
     </Grid>
 
-    <!-- Dodanie AppBar z przyciskiem "save" oraz zablokowanym przyciskiem -->
+    <!-- Dodanie AppBar z przyciskiem "save" oraz zablokowanym przyciskiem
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
             <shell:ApplicationBarIconButton IconUri="/Images/save.png" Text="Save" IsEnabled="False"/>
         </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
 
 </phone:PhoneApplicationPage>

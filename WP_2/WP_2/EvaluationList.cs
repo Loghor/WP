@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WP_2
 {
-    class EvaluationList
+    public class EvaluationList
     {
         private string _name;
         private string _surname;
