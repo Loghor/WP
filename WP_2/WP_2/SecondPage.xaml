@@ -1,0 +1,47 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="WP_2.SecondPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
+    <!--LayoutRoot is the root grid where all page content is placed-->
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="Patronage 2014" Style="{StaticResource PhoneTextNormalStyle}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="72" Margin="-4,49,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="456"/>
+            <TextBlock x:Name="textBlockName" HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" Text="Imię" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBoxSurname" HorizontalAlignment="Left" Height="72" Margin="-4,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="456"/>
+            <TextBlock x:Name="textBlockSurname" HorizontalAlignment="Left" Margin="10,126,0,0" TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top"/>
+            <toolkit:ListPicker FullModeHeader="Ocena" Margin="10,262,14,10" ItemsSource="{Binding Path=EvaluationItems}" FullModeItemTemplate="{Binding Path=EvaluationItems, Mode=TwoWay}" ItemTemplate="{Binding Path=EvaluationItems, Mode=TwoWay}" x:Name="lpkEvaluation"/>
+            <TextBlock x:Name="textBlockEvaluation" HorizontalAlignment="Left" Margin="10,230,0,0" TextWrapping="Wrap" Text="Ocena" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+
+    <!-- Dodanie AppBar z przyciskiem "save" oraz zablokowanym przyciskiem -->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/save.png" Text="Save" IsEnabled="False"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>
