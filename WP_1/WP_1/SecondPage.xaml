@@ -15,19 +15,6 @@
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
     <!--LayoutRoot is the root grid where all page content is placed-->
     
-    <!-- Formaty dla ListPicker'a -->
-    <phone:PhoneApplicationPage.Resources>
-        <DataTemplate x:Name="lpkItemEvaluation">
-            <TextBlock  Text="{Binding Evaluation}" />
-        </DataTemplate>
-        <DataTemplate x:Name="lpkHeader">
-                <TextBlock Text="Ocena" Foreground="White" />
-        </DataTemplate>
-        <DataTemplate x:Name="lpkFullItemEvaluation">
-            <TextBlock Foreground="Red" Text="{Binding EvaluationItem}"/>
-        </DataTemplate>
-    </phone:PhoneApplicationPage.Resources>
-
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -45,8 +32,8 @@
             <TextBlock x:Name="textBlockName" HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" Text="Imię" VerticalAlignment="Top"/>
             <TextBox x:Name="textBoxSurname" HorizontalAlignment="Left" Height="72" Margin="-4,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="456"/>
             <TextBlock x:Name="textBlockSurname" HorizontalAlignment="Left" Margin="10,126,0,0" TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top"/>
-            <!-- ListPicker : Format header oraz item został podany w DataTemplate -->
-            <toolkit:ListPicker Margin="10,230,14,-206" Header="Ocena" HeaderTemplate="{StaticResource lpkHeader}" FullModeItemTemplate="{Binding lpkFullItemEvaluation}" ItemTemplate="{Binding lpkHeaderEvaluation}" x:Name="lpkEvaluation"/>
+            <toolkit:ListPicker FullModeHeader="Ocena" Margin="10,262,14,10" ItemsSource="{Binding Path=EvaluationItems}" FullModeItemTemplate="{Binding Path=EvaluationItems, Mode=TwoWay}" ItemTemplate="{Binding Path=EvaluationItems, Mode=TwoWay}" x:Name="lpkEvaluation"/>
+            <TextBlock x:Name="textBlockEvaluation" HorizontalAlignment="Left" Margin="10,230,0,0" TextWrapping="Wrap" Text="Ocena" VerticalAlignment="Top"/>
         </Grid>
     </Grid>
 
