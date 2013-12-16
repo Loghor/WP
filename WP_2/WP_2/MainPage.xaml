@@ -11,7 +11,8 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -25,7 +26,38 @@
             <TextBlock Text="Patronage 2014" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
         </StackPanel>
 
-        <!--ContentPanel - place additional content here-->
+        <TextBlock Name="textBoxAverageEvaluation" HorizontalAlignment="Left" Margin="12,40,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Średnia ocen:" VerticalAlignment="Top" RenderTransformOrigin="0.512,-0.519"/>
+        <TextBlock Name="textBoxValueAverageEvaluation" HorizontalAlignment="Left" Margin="155,40,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <Grid HorizontalAlignment="Left" Height="552" Margin="0,72,0,0" Grid.Row="1" VerticalAlignment="Top" Width="480">
+            <ListBox Name="listBoxEvalution" Margin="0,0,0,0">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Button Width="480" Height="120">
+                            <Button.Content>
+                                <StackPanel Orientation="Horizontal" Height="120" Width="400">
+                                    <StackPanel Orientation="Vertical" Height="120">
+                                        <StackPanel Orientation="Horizontal" Height="40">
+                                            <TextBlock Width="100" FontSize="22" Text="Imię" Height="40"/>
+                                            <TextBlock Width="200" FontSize="22" Text="{Binding}" Height="40"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Height="40">
+                                            <TextBlock Width="100" FontSize="22" Text="Nazwisko" Height="40"/>
+                                            <TextBlock Width="200" FontSize="22" Text="{Binding}" Height="40"/> 
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Height="40">
+                                            <TextBlock Width="100" FontSize="22" Text="Ocena" Height="40"/>
+                                            <TextBlock Width="200" FontSize="22" Text="{Binding}" Height="40"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </Grid>
+    <!--ContentPanel - place additional content here-->
 
     </Grid>
     <!-- Dodanie AppBar z przyciskiem "add" oraz wywołanie funkcji "NextPage" przy kliknięciu -->
